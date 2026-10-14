@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "hanssound.screencast-indicator",
+  "name": "Screen capture indicator",
+  "version": "1.0.0",
+  "author": "hanssound",
+  "license": "0BSD",
+  "description": "Purple screen capture indicator with app attribution and recent session history",
+  "kinds": [
+    "bar-widget",
+    "service"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "service": "Service.qml"
+  },
+  "barWidget": {
+    "displayName": "Screen capture indicator",
+    "description": "Purple dot while the screen is being shared or recorded",
+    "category": "System",
+    "defaultSection": "right",
+    "allowMultiple": false
+  },
+  "keepLoaded": true
+}

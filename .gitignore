@@ -1,0 +1,16 @@
+# Only reviewed release files belong in the public repository.
+/*
+!/.gitignore
+!/BarWidget.qml
+!/Service.qml
+!/Model.js
+!/Model.test.js
+!/probe.sh
+!/probe.test.py
+!/consumers.jq
+!/qml.test.qml
+!/qml.test.py
+!/manifest.json
+!/README.md
+!/LICENSE
+!/prepare-release.sh
