@@ -24,7 +24,8 @@ patterns = [r"/(?:home|Users)/[A-Za-z0-9_.-]+/",
 for name in files:
     path = Path(name)
     assert re.fullmatch(r"[A-Za-z0-9._-]+", name) and path.is_file() and not path.is_symlink(), name
-    text = path.read_text()
+    # Scan PNG bytes too: Latin-1 preserves every ASCII privacy pattern.
+    text = path.read_bytes().decode("latin1") if name == "preview.png" else path.read_text()
     assert not any(re.search(pattern, text) for pattern in patterns), "Privacy check failed: " + name
 manifest = json.loads(Path("manifest.json").read_text())
 assert manifest["id"] == "hanssound.screencast-indicator"
